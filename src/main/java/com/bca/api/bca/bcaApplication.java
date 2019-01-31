@@ -21,7 +21,6 @@ import io.dropwizard.setup.Environment;
 import com.google.gson.*;
 
 public class bcaApplication extends Application<bcaConfiguration> {
-
     public static void main(final String[] args) throws Exception {
         new bcaApplication().run(args);
     }
@@ -33,26 +32,25 @@ public class bcaApplication extends Application<bcaConfiguration> {
 
     @Override
     public void initialize(final Bootstrap<bcaConfiguration> bootstrap) {
-    	
+
     }
 
     @Override
-    public void run(final bcaConfiguration configuration,
-                    final Environment environment) {
-   
-    	// Setup jersey client configuration
-    	JerseyClientConfiguration conf = configuration.getJerseyClientConfiguration();
-    	conf.setChunkedEncodingEnabled(false);
-    	
-    	// Create Jersey http client
-    	final Client client = new JerseyClientBuilder(environment).using(conf).build(getName())
-    			.property(ClientProperties.SUPPRESS_HTTP_COMPLIANCE_VALIDATION, true);
-    	
-    	 BCAClient bcaClient = new BCAClient(client);
-    	 bcaClient.getToken();
-    	
-    	environment.jersey().register(new BCAService(client));
-    	
+    public void run(final bcaConfiguration configuration, final Environment environment) {
+
+        // Setup jersey client configuration
+        JerseyClientConfiguration conf = configuration.getJerseyClientConfiguration();
+        conf.setChunkedEncodingEnabled(false);
+
+        // Create Jersey http client
+        final Client client = new JerseyClientBuilder(environment).using(conf).build(getName())
+                .property(ClientProperties.SUPPRESS_HTTP_COMPLIANCE_VALIDATION, true);
+
+        BCAClient bcaClient = new BCAClient(client);
+        bcaClient.getToken();
+
+        environment.jersey().register(new BCAService(client));
+
     }
 
 }

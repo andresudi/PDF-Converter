@@ -11,8 +11,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 public class bcaConfiguration extends Configuration {
-    // TODO: implement service configuration
-	
+
 	@Valid
     @NotNull
     private JerseyClientConfiguration jerseyClient = new JerseyClientConfiguration();
