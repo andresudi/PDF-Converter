@@ -1,0 +1,10 @@
+/target/
+.classpath
+.project
+/.settings/
+config.yml
+dependency-reduced-pom.xml
+/src/main/java/com/bca/api/bca/credentials/Credentials.java
+templates
+css
+.DS_Store
