@@ -95,18 +95,7 @@ public class JsoupLocalFile {
         System.out.println(doc.toString());
         
         System.out.println("sukses");
-        
-//        generateEmailPdf();
-//        generateSigningPdf();
     }
-    
-//    public static void generateEmailPdf() {
-//    	
-//    }
-//    
-//    public static void generateSigningPdf() {
-//    	
-//    }
     
     public static String convertToXhtml(String html) throws UnsupportedEncodingException {
         Tidy tidy = new Tidy();
