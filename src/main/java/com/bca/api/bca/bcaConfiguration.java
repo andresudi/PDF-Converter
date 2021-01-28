@@ -12,11 +12,11 @@ import javax.validation.constraints.*;
 
 public class bcaConfiguration extends Configuration {
 
-	@Valid
+    @Valid
     @NotNull
     private JerseyClientConfiguration jerseyClient = new JerseyClientConfiguration();
 	
-	@JsonProperty("jerseyClient")
+    @JsonProperty("jerseyClient")
     public JerseyClientConfiguration getJerseyClientConfiguration() {
 		jerseyClient.setTimeout(Duration.seconds(10));
 		jerseyClient.setConnectionRequestTimeout(Duration.seconds(10));
