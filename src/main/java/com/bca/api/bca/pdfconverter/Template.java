@@ -14,7 +14,6 @@ public enum Template {
 
 	public String getFilename() {
 		return filename;
-		
 	}
 
 	public String getSubject() {
